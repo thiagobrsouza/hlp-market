@@ -25,7 +25,14 @@ export class InvoiceService {
     async findById(id: number) {
         return prisma.invoice.findUnique({
             where: { id },
-            include: { supplier: true }
+            include: {
+                supplier: true,
+                stockItems: {
+                    include: {
+                        product: true
+                    }
+                }
+            }
         });
     }
 
