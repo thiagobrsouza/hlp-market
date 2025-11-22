@@ -46,3 +46,29 @@ model Product {
 
   @@map("products")
 }
+
+model Supplier {
+  id        Int       @id @default(autoincrement())
+  name      String
+  cnpj      String    @unique
+  notes     String?   @db.Text
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  invoices  Invoice[]
+
+  @@map("suppliers")
+}
+
+model Invoice {
+  id            Int      @id @default(autoincrement())
+  description   String
+  invoiceNumber String   @unique
+  supplier      Supplier @relation(fields: [supplierId], references: [id])
+  supplierId    Int
+  invoiceDate   DateTime @db.Date()
+  invoiceValue  Decimal  @db.Decimal(10, 2)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("invoices")
+}
