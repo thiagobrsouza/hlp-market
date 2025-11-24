@@ -1,0 +1,5 @@
+export interface Customer {
+    name: string;
+    cpf: string;
+    notes: string;
+}
