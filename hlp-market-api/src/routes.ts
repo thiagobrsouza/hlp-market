@@ -7,6 +7,7 @@ import { invoiceRouter } from "./routers/InvoiceRouter";
 import { stockRouter } from "./routers/StockRouter";
 import { orderRouter } from "./routers/OrderRouter";
 import { customerRouter } from "./routers/CustomerRouter";
+import { userRouter } from "./routers/UserRouter";
 
 export const routes = Router();
 
@@ -19,3 +20,5 @@ routes.use(invoiceRouter);
 routes.use(stockRouter);
 routes.use(orderRouter);
 routes.use(customerRouter);
+
+routes.use(userRouter);

@@ -129,3 +129,17 @@ model OrderItem {
 
   @@map("order-items")
 }
+
+model User {
+  id       Int     @id @default(autoincrement())
+  name     String
+  username String  @unique
+  password String
+  profile  Profile
+}
+
+enum Profile {
+  ADMINISTRADOR
+  VENDEDOR
+  ESTOQUISTA
+}
