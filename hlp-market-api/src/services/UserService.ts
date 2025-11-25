@@ -79,7 +79,13 @@ export class UserService {
         const hashPassword = await hash(password, 10);
         return prisma.user.update({
             where: { id },
-            data: { password: hashPassword }
+            data: { password: hashPassword },
+            select: {
+                id: true,
+                name: true,
+                username: true,
+                profile: true
+            }
         });
     }
 

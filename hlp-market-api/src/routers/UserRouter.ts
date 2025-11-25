@@ -8,6 +8,7 @@ userRouter.post('/api/users', (req, res) => userController.create(req, res));
 userRouter.get('/api/users', (req, res) => userController.findAll(req, res));
 userRouter.get('/api/users/:id', (req, res) => userController.findById(req, res));
 userRouter.put('/api/users/:id', (req, res) => userController.update(req, res));
+userRouter.put('/api/users/:id/password', (req, res) => userController.updatePassword(req, res));
 userRouter.delete('/api/users/:id', (req, res) => userController.deleteOne(req, res));
 
 export { userRouter };
