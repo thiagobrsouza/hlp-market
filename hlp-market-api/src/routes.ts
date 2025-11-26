@@ -8,9 +8,11 @@ import { stockRouter } from "./routers/StockRouter";
 import { orderRouter } from "./routers/OrderRouter";
 import { customerRouter } from "./routers/CustomerRouter";
 import { userRouter } from "./routers/UserRouter";
+import { authRouter } from "./routers/AuthRouter";
 
 export const routes = Router();
 
+routes.use(authRouter);
 routes.use(brandRouter);
 routes.use(categoryRouter);
 routes.use(productRouter);

@@ -1,4 +1,4 @@
-import type { Profile } from "../../generated/prisma/enums";
+import type { Profile } from "../../generated/prisma/index.js";
 
 export interface User {
     name: string;
